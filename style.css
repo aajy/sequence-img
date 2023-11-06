@@ -3,4 +3,11 @@
 	height: 300px;
 	border: 1px solid #666;
 	background-color: aqua;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	> span {
+		color: #fff;
+		font-size: 2rem;
+	}
 }
