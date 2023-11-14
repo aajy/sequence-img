@@ -5,12 +5,12 @@ setInterval(() => {
 	const min = new Date().getMinutes();
 	const sec = new Date().getSeconds();
 
-	spanHr.innerText = plusZero(1);
-	spanMin.innerText = plusZero(min);
-	spanSec.innerText = plusZero(sec);
+	spanHr.innerText = checkLength(hr);
+	spanMin.innerText = checkLength(min);
+	spanSec.innerText = checkLength(sec);
 }, 1000);
 
-function plusZero(el) {
+function checkLength(el) {
 	if (String(el).length < 2) {
 		return (el = '0' + el);
 	} else {
