@@ -18,10 +18,14 @@ function activate(arr, idx) {
 	arr[idx].classList.add('on');
 }
 
-splitText(txts[0]);
-splitText(txts[1]);
-function splitText(el) {
+splitText(txts[0], 0.2);
+splitText(txts[1], 0.1);
+function splitText(el, interval) {
 	let tags = '';
-	for (let letter of el.innerText) tags += `<span>${letter}</span>`;
+	let count = 0;
+	for (let letter of el.innerText) {
+		tags += `<span style='transition-delay:${interval * count}s;'>${letter}</span>`;
+		count++;
+	}
 	el.innerHTML = tags;
 }
