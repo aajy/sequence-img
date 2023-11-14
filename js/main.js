@@ -14,10 +14,10 @@ setInterval(() => {
 		p.style.backgroundColor = '#333';
 	}
 	if (21 <= sec && sec < 41) {
-		p.style.backgroundColor = '#999';
+		p.style.backgroundColor = '#888';
 	}
 	if (41 <= sec && sec < 61) {
-		p.style.backgroundColor = '#aaa';
+		p.style.backgroundColor = '#ccc';
 	}
 }, 1000);
 

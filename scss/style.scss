@@ -1,6 +1,5 @@
 p {
 	display: inline-block;
-	border: 1px solid red;
 	padding: 80px;
 	margin: 100px auto;
 	display: flex;
@@ -8,4 +7,5 @@ p {
 	align-items: center;
 	font-size: 5rem;
 	gap: 20px;
+	transition: 1s;
 }
