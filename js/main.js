@@ -1,33 +1,17 @@
-const p = document.querySelector('p');
-const [spanHr, spanMin, spanSec] = document.querySelectorAll('span');
+const screen = document.querySelector('.screen');
+const em = screen.querySelector('em');
+const [spanHr, spanMin, spanSec] = screen.querySelectorAll('span');
 
 setInterval(() => {
-	const hr = new Date().getHours();
-	const min = new Date().getMinutes();
-	const sec = new Date().getSeconds();
+	let now = new Date();
+	let hr = now.getHours();
+	let min = now.getMinutes();
+	let sec = now.getSeconds();
 
-	spanHr.innerText = checkLength(hr);
-	spanMin.innerText = checkLength(min);
-	spanSec.innerText = checkLength(sec);
+	em.innerText = hr < 12 ? 'em' : 'pm';
 
-	if (0 <= sec && sec < 21) {
-		p.style.backgroundColor = '#333';
-		spanSec.style.color = '#eee';
-	}
-	if (21 <= sec && sec < 41) {
-		p.style.backgroundColor = '#888';
-		spanSec.style.color = 'orange';
-	}
-	if (41 <= sec && sec < 61) {
-		p.style.backgroundColor = '#ccc';
-		spanSec.style.color = 'red';
-	}
+	spanHr.innerText = hr < 10 ? '0' + hr : hr;
+	spanMin.innerText = min < 10 ? '0' + min : min;
+	spanSec.innerText = sec < 10 ? '0' + sec : sec;
+	console.log(now);
 }, 1000);
-
-function checkLength(el) {
-	if (String(el).length < 2) {
-		return (el = '0' + el);
-	} else {
-		return el;
-	}
-}
